@@ -15,15 +15,15 @@ describe('Service: auth', function () {
 
   it('should login as a user', function () {
     var user = {
-      email: "test@gmail.com",
-      name: "test",
+      email: 'test@gmail.com',
+      name: 'test',
       _id: 1
     };
     mockBackend.expectPOST('/session/new').respond(user);
 
     var postData = {
       name: 'test',
-      password: 'test',
+      password: 'test'
     };
 
     auth.login(postData, function() {});
