@@ -201,8 +201,8 @@
 .meta .follower-count {
   color: #c0c0c0;
 
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   border-bottom: 4px solid #FFFFFF;
 
   cursor: pointer;
@@ -227,11 +227,11 @@
   text-decoration: none;
 }
 
-.timeline .card {
+.timeline li {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.timeline .card:last-child {
+.timeline li:last-child {
   border-bottom: none;
 }
 
@@ -266,11 +266,17 @@
 }
 
 .timeline .card .content {
-  margin-left: 58px;
+  margin-left: 65px;
+}
+
+.timeline .card .card-header .date {
+  font-size: 14px;
+  font-weight: 300;
+  color: #999;
 }
 
 .timeline .card .card-header {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .timeline .card .card-footer a {
@@ -285,7 +291,7 @@
 .timeline .card .avatar {
   float: left;
   margin-top: 3px;
-  margin-left: -58px;
+  margin-left: -65px;
 }
 
 .timeline .card .fullname {
@@ -310,6 +316,7 @@
 
 .timeline .card .tweet-content {
   margin-top: 10px;
+  font-size: 16px;
 }
 
 /*
