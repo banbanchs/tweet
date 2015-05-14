@@ -12,9 +12,18 @@ describe('Directive: reply', function () {
     scope = $rootScope.$new();
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
+  it('should make a reply element', inject(function ($compile) {
+    scope.tweet = {
+      "id": 6,
+      "content": "Ok now.",
+      "createdAt": "2015-05-06T12:41:55.014Z",
+      "expiredAt": "2015-05-06T12:51:55.014Z",
+      "User": {"id": 3, "email": "co@gmail.com", "name": "testname", "meta": {"following": ["root", "testing"]}}
+    };
     element = angular.element('<reply></reply>');
     element = $compile(element)(scope);
-    expect(element.find('.form-control').text()).toEqual('@test ');
+    scope.$digest();
+
+    expect(element.find('.form-control').text()).toEqual('@testname ');
   }));
 });

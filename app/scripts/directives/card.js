@@ -13,10 +13,10 @@ angular.module('tweetApp')
       + '<div class="card-inner">'
       + '<div class="content">'
       + '<div class="card-header">'
-      + '<a href="" class="account-group"><img class="avatar img-circle" src="/images/50x50.png" alt="avatar"/><strong class="fullname">banbanchs</strong> <span class="username">banbanchs</span></a>'
-      + '<time class="date pull-right" datetime="2015-04-27T07:59:36.641Z">07:59 04-27</time>'
+      + '<a href="" class="account-group"><img class="avatar img-circle" src="/images/50x50.png" alt="avatar"/><strong class="fullname">{{ tweet.User.name }}</strong><span class="username">{{ tweet.User.name }}</span></a>'
+      + '<time class="date pull-right" datetime="{{ tweet.createdAt }}">{{ tweet.createdAt | date:"MM-dd HH:mm"}}</time>'
       + '</div>'
-      + '<p class="tweet-content">Hello World</p>'
+      + '<p class="tweet-content">{{ tweet.content }}</p>'
       + '<div class="card-footer"><a href=""><span class="glyphicon glyphicon-console"></span></a><a href=""><span class="glyphicon glyphicon-star"></span></a><a href=""><span class="glyphicon glyphicon-refresh"></span></a></div>'
       + '</div></div></div>',
       restrict: 'E',

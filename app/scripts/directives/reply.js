@@ -12,7 +12,7 @@ angular.module('tweetApp')
       template: '<div class="reply">' +
       '<img src="/images/32x32.png" alt="my avatar"/>' +
       '<div class="reply-content input-group col-lg-12">' +
-      '<div class="form-control" contenteditable="true">@test </div>' +
+      '<div class="form-control" contenteditable="true">@{{ tweet.User.name }} </div>' +
       '<button class="btn btn-primary pull-right">Reply</button>' +
       '</div>' +
       '</div>',
