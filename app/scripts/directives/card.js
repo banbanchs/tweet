@@ -22,11 +22,11 @@ angular.module('tweetApp')
       restrict: 'E',
       replace: true,
       link: function postLink(scope, element, attrs) {
+        element.next().hide();
         element.click(function() {
-          element.find('.card-inner').toggleClass('open');
-          //$('.card-inner', this).toggleClass('open');
+          element.parent().toggleClass('open');
+          element.next().slideToggle('300').find('.form-control').removeClass('clicked').next().hide();
         });
-        //element.text('this is the card directive');
       }
     };
   });

@@ -1,6 +1,6 @@
 'use strict';
 
-describe('Directive: card', function () {
+describe('Directive: reply', function () {
 
   // load the directive's module
   beforeEach(module('tweetApp'));
@@ -13,8 +13,8 @@ describe('Directive: card', function () {
   }));
 
   it('should make hidden element visible', inject(function ($compile) {
-    element = angular.element('<card></card>');
+    element = angular.element('<reply></reply>');
     element = $compile(element)(scope);
-    expect(element.find('.tweet-content').text()).toEqual('Hello World');
+    expect(element.find('.form-control').text()).toEqual('@test ');
   }));
 });
