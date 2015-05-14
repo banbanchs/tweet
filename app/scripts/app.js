@@ -27,7 +27,8 @@ angular
         controller: 'MainCtrl'
       })
       .when('/timeline', {
-        templateUrl: 'views/timeline.html'
+        templateUrl: 'views/timeline.html',
+        controller: 'TimelineCtrl'
       })
       .when('/login', {
         templateUrl: 'views/login.html',
