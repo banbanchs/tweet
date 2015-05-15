@@ -32,15 +32,7 @@
         <div class="follower-count col-md-3"><p class="text-center text-uppercase">followers<a href="">333</a></p></div>
       </div>
       <ul class="timeline row list-unstyled">
-        <li>
-          <card></card>
-          <reply></reply>
-        </li>
-        <li>
-          <card></card>
-          <reply></reply>
-        </li>
-        <li>
+        <li ng-repeat="tweet in tweets">
           <card></card>
           <reply></reply>
         </li>
