@@ -245,8 +245,8 @@
   background: #F0F2F5;
 }
 
-.timeline .open {
-  border-bottom-color: transparent;
+.timeline .open .card-inner {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .timeline .open .card-inner {
