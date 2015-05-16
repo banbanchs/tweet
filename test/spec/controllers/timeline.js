@@ -3,7 +3,12 @@
 describe('Controller: TimelineCtrl', function() {
 
   // load the controller's module
-  beforeEach(module('tweetApp'));
+  beforeEach(module('tweetApp', function($provide) {
+    $provide.decorator('$cookieStore', function($delegate) {
+      $delegate.put('loggedIn', true);
+      return $delegate;
+    });
+  }));
 
   var TimelineCtrl,
     mockBackend,

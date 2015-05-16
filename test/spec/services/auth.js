@@ -6,11 +6,12 @@ describe('Service: auth', function () {
   beforeEach(module('tweetApp'));
 
   // instantiate service
-  var auth, mockBackend, rootScope;
-  beforeEach(inject(function (_auth_, _$httpBackend_, $rootScope) {
+  var auth, mockBackend, rootScope, location;
+  beforeEach(inject(function (_auth_, _$httpBackend_, $rootScope, $location) {
     auth = _auth_;
     mockBackend = _$httpBackend_;
     rootScope = $rootScope.$new();
+    location = $location;
   }));
 
   it('should login as a user', function () {
@@ -20,6 +21,7 @@ describe('Service: auth', function () {
       _id: 1
     };
     mockBackend.expectPOST('/session/new').respond(user);
+    location.path('/login');
 
     var postData = {
       name: 'test',

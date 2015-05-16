@@ -3,7 +3,12 @@
 describe('Service: loader', function() {
 
   // load the service's module
-  beforeEach(module('tweetApp'));
+  beforeEach(module('tweetApp', function($provide) {
+    $provide.decorator('$cookieStore', function($delegate) {
+      $delegate.put('loggedIn', true);
+      return $delegate;
+    });
+  }));
 
   // instantiate service
   var loader, mockBackend, api, cacheData;

@@ -31,15 +31,15 @@ describe('Controller: LoginCtrl', function () {
       name: 'test',
       _id: 1
     };
+    location.path('/login');
     mockBackend.expectPOST('/session/new').respond(user);
-    location.path('test');
     scope.login();
     expect(scope.loggedIn).toBe(false);
 
     mockBackend.flush();
     expect(scope.loggedIn).toBe(true);
     expect(scope.currentUser).toEqual(user);
-    expect(location.path()).toEqual('/');
+    expect(location.path()).toEqual('/timeline');
   });
 
   it('should register a new user', function() {
@@ -53,8 +53,8 @@ describe('Controller: LoginCtrl', function () {
       name: 'testing',
       email: 'test@test.com'
     };
+    location.path('/login');
     mockBackend.expectPOST('/api/users').respond(user);
-    location.path('test');
     scope.register();
 
     expect(scope.user).toBeUndefined();

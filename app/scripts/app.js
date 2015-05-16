@@ -42,7 +42,20 @@ angular
         redirectTo: '/'
       });
   })
-  .run(['$rootScope', function($rootScope) {
-    $rootScope.currentUser = null;
-    $rootScope.loggedIn = false;
+  .run(['$rootScope', '$location', '$cookieStore', 'auth', function($rootScope, $location, $cookieStore, auth) {
+
+    $rootScope.loggedIn = $cookieStore.get('loggedIn') || false;
+    $rootScope.currentUser = $cookieStore.get('currentUser') || null;
+
+    $rootScope.$watch($rootScope.loggedIn, function(newValue, oldValue) {
+      if (!$rootScope.loggedIn && ['/', '/login'].indexOf($location.path()) === -1) {
+        auth.currentUser();
+      }
+    });
+
+    $rootScope.$on('event:auth-loginRequired', function() {
+      $location.path('/login');
+      return false;
+    });
+
   }]);

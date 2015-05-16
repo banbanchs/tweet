@@ -15,7 +15,7 @@ angular.module('tweetApp')
       auth.login({'name': $scope.user.name, 'password': $scope.user.password}, function(loggedIn) {
         if (loggedIn) {
           authService.loginConfirmed();
-          $location.path('/');
+          $location.path('/timeline');
         } else {
           authService.loginCancelled();
           $scope.alert = {
