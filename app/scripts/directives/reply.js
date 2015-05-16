@@ -10,7 +10,7 @@ angular.module('tweetApp')
   .directive('reply', function() {
     return {
       template: '<div class="reply">' +
-      '<img src="/images/32x32.png" alt="my avatar"/>' +
+      '<img gravatar-src-once="\'{{ $root.currentUser.email }}\'" gravatar-size="32" alt="my avatar"/>' +
       '<div class="reply-content input-group col-lg-12">' +
       '<div class="form-control" contenteditable="true">@{{ tweet.User.name }} </div>' +
       '<button class="btn btn-primary pull-right">Reply</button>' +

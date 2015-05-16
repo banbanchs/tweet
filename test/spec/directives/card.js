@@ -29,5 +29,6 @@ describe('Directive: card', function() {
     expect(date.attr('datetime')).toEqual(scope.tweet.createdAt);
     // +0800 (CST)
     expect(date.text()).toEqual('05-06 20:41');
+    expect(element.find('img.avatar').attr('src')).toBeTruthy();
   }));
 });

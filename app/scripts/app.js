@@ -18,6 +18,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.bootstrap',
+    'ui.gravatar',
     'http-auth-interceptor'
   ])
   .config(function ($routeProvider) {
