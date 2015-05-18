@@ -26,6 +26,7 @@ describe('Directive: card', function() {
 
     var date = element.find('.date');
     expect(element.find('.tweet-content').text()).toEqual('Ok now.');
+    expect(element.find('.account-group').attr('href')).toEqual('#/user/' + scope.tweet.User.name);
     expect(date.attr('datetime')).toEqual(scope.tweet.createdAt);
     // +0800 (CST)
     expect(date.text()).toEqual('05-06 20:41');
