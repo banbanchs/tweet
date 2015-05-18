@@ -54,7 +54,8 @@ describe('Controller: UserCtrl', function() {
     };
     mockBackend.expectGET('/api/users/testname').respond(user);
     mockBackend.flush();
-    expect(angular.equals(user, scope.user)).toBe(true);
+    expect(scope.user.name).toBe('testname');
+    expect(scope.tweets[0].User.name).toBe('testname');
     expect(scope.tweets.length).toBe(user.Tweets.length);
   });
 });
