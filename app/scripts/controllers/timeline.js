@@ -8,7 +8,7 @@
  * Controller of the tweetApp
  */
 angular.module('tweetApp')
-  .controller('TimelineCtrl', ['$scope', 'getTweet', 'getUser', function($scope, getTweet, getUser) {
+  .controller('TimelineCtrl', ['$scope', 'getTweet', function($scope, getTweet) {
 
     $scope.tweets = [];
 
