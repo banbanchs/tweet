@@ -28,7 +28,7 @@ describe('Service: auth', function () {
       password: 'test'
     };
 
-    auth.login(postData, function() {});
+    auth.login(postData, angular.noop);
     mockBackend.flush();
     expect(rootScope.loggedIn).toBe(true);
     expect(rootScope.currentUser).toEqual(user);

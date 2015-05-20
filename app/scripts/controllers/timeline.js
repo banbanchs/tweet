@@ -12,8 +12,12 @@ angular.module('tweetApp')
 
     $scope.tweets = [];
 
-    getTweet().then(function(tweets) {
-      $scope.tweets = tweets;
-    });
+    $scope.loadNewTweet = function(page) {
+      getTweet(page).then(function(tweets) {
+        $scope.tweets = tweets;
+      });
+    };
+
+    $scope.loadNewTweet();
 
   }]);

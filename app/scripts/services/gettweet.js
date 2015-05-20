@@ -10,10 +10,10 @@
 angular.module('tweetApp')
   .factory('getTweet', ['restApi', 'cache', '$q', function(restApi, cache, $q) {
     // TODO: Add limit support
-    return function() {
+    return function(page) {
       var defer = $q.defer();
       // TODO: Cache support
-      restApi.tweet.query(function(tweets) {
+      restApi.tweet.query({page: page}, function(tweets) {
         defer.resolve(tweets);
       }, function(err) {
         defer.reject(err);

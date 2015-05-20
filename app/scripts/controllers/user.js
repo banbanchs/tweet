@@ -12,18 +12,22 @@ angular.module('tweetApp')
 
     $scope.tweets = [];
 
-    getUser($routeParams.name).then(function(user) {
-      $scope.user = {
-        id: user.id,
-        name: user.name,
-        email: user.email,
-        meta: user.meta
-      };
-      $scope.tweets = user.Tweets;
-      angular.forEach($scope.tweets, function(value, key) {
-        value.User = $scope.user;
+    $scope.loadNewTweet = function(page) {
+      getUser($routeParams.name, page).then(function(user) {
+        $scope.user = {
+          id: user.id,
+          name: user.name,
+          email: user.email,
+          meta: user.meta
+        };
+        $scope.tweets = user.Tweets;
+        angular.forEach($scope.tweets, function(value, key) {
+          value.User = $scope.user;
+        });
       });
-    });
+    };
+
+    $scope.loadNewTweet();
 
   }]);
 
