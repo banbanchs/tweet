@@ -4,13 +4,13 @@
       <!--<div class="container-fluid">-->
       <div class="user-info row">
         <div class="avatar">
-          <img class="img-circle img-responsive center-block" gravatar-src-once="'memory.silentvoyage@gmail.com'" gravatar-size="100" alt="avatar"/>
+          <img class="img-circle img-responsive center-block" gravatar-src="user.email || currentUser.email" gravatar-size="100" alt="avatar"/>
         </div>
-        <h3 class="username text-center">banbanchs</h3>
+        <h3 class="username text-center">{{ user.name || currentUser.name}}</h3>
 
         <p class="description text-center">Morbi efficitur tempus euismod. Vivamus at placerat leo, vel rhoncus velit
           Vivamus egestas ultricies scelerisque. Nulla facilisi.</p>
-        <button type="button" class="btn btn-primary center-block">Follow Me</button>
+        <button type="button" class="btn btn-primary center-block" ng-show="user">Follow Me</button>
       </div>
       <div class="user-picture row"></div>
       <div class="user-activities row">
