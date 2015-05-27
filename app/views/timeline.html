@@ -60,3 +60,22 @@
     </div>
   </div>
 </div>
+
+<div class="aside" ng-controller="NewTweetCtrl">
+  <script type="text/ng-template" id="newTweet.html">
+    <div class="modal-header">
+      <p class="text-center">New Message</p>
+    </div>
+    <div class="modal-body">
+      <div class="send-box input-group col-lg-10 center-block">
+        <textarea ng-model="content" class="form-control" name="newTweet" id="newTweet" rows="10"></textarea>
+        <!--<div class="form-control" contenteditable="true">{{ content }}</div>-->
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button ng-click="send()" class="btn btn-primary">Send</button>
+    </div>
+  </script>
+  <button ng-click="displayTweetBox()"><span class="glyphicon glyphicon-plus"></span></button>
+</div>
+
