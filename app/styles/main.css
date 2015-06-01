@@ -12,9 +12,10 @@ body {
 /*}*/
 
 .footer {
+  margin-top: 50px;
   padding-top: 19px;
   color: #777;
-  background: #FFFFFF;
+  /*background: #FFFFFF;*/
   border-top: 1px solid #e5e5e5;
 }
 
@@ -375,7 +376,7 @@ body {
   overflow: hidden;
 }
 .send-box .form-control {
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 15px;
 }
 

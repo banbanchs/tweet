@@ -64,7 +64,8 @@
 <div class="aside" ng-controller="NewTweetCtrl">
   <script type="text/ng-template" id="newTweet.html">
     <div class="modal-header">
-      <p class="text-center">New Message</p>
+      <button type="button" class="close" ng-click="cancel()" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <h4 class="modal-title text-center">New Message</h4>
     </div>
     <div class="modal-body">
       <div class="send-box input-group col-lg-10 center-block">
