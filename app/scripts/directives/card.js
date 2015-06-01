@@ -22,10 +22,14 @@ angular.module('tweetApp')
       restrict: 'E',
       replace: true,
       link: function postLink(scope, element, attrs) {
+        // Hide the comment form
         element.next().hide();
+
+        // Expand the card if user click it
         element.click(function() {
-          element.parent().toggleClass('open');
-          element.next().slideToggle('300').find('.form-control.clicked').removeClass('clicked').next().hide();
+          element.parent().toggleClass('open').end()
+            .next().slideToggle('300')    // comment form slide up/down
+            .find('.form-control.clicked').removeClass('clicked').next().hide();    // Close the clicked comment form
         });
       }
     };
