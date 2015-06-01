@@ -290,7 +290,7 @@ body {
 }
 
 .timeline .card .card-header {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .timeline .card .card-footer a {
@@ -310,6 +310,7 @@ body {
 
 .timeline .card .fullname {
   color: #292F33;
+  margin-right: 5px;
 }
 
 .timeline .card .fullname:hover {
@@ -385,11 +386,19 @@ body {
  */
 .trend-wrapper {
   background: #FFFFFF;
-  margin-top: 10px;
+  padding-bottom: 20px;
 }
 
 .trend, .recommend-user {
   margin: 0;
+}
+
+.recommend-user .fullname {
+  color: #292F33;
+  margin-left: 10px;
+}
+.recommend-user .fullname:hover {
+  color: #1F98C7;
 }
 
 .trend h3, .recommend-user h3 {
