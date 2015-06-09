@@ -75,12 +75,12 @@ module.exports = function (grunt) {
       {
         context: '/session',
         host: 'localhost',
-        port: 6000
+        port: 5010
       },
       {
         context: '/api',
         host: 'localhost',
-        port: 6000
+        port: 5010
       }
       ],
       livereload: {
