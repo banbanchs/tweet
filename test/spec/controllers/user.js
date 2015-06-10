@@ -57,5 +57,11 @@ describe('Controller: UserCtrl', function() {
     expect(scope.user.name).toBe('testname');
     expect(scope.tweets[0].User.name).toBe('testname');
     expect(scope.tweets.length).toBe(user.Tweets.length);
+
+    var user = { name: 'test' };
+    mockBackend.expectPOST('/api/users/follow').respond(201);
+    scope.followUser(user);
+    mockBackend.flush();
+    expect(user.isFollowed).toBe(true);
   });
 });

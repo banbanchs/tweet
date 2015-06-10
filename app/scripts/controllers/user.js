@@ -8,7 +8,7 @@
  * Controller of the tweetApp
  */
 angular.module('tweetApp')
-  .controller('UserCtrl', ['$scope', '$routeParams', 'getUser', function($scope, $routeParams, getUser) {
+  .controller('UserCtrl', ['$scope', '$routeParams', '$http', 'getUser', function($scope, $routeParams, $http, getUser) {
 
     $scope.tweets = [];
 
@@ -29,5 +29,15 @@ angular.module('tweetApp')
 
     $scope.loadNewTweet();
 
+    $scope.followUser = function(user) {
+      $http.post('/api/users/follow', {follow: user.name})
+        .success(function(data, status) {
+          user.isFollowed = true;
+        })
+        .error(function(data, status) {
+          console.log(data);
+          console.log(status);
+        });
+    };
   }]);
 
