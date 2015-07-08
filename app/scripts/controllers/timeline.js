@@ -20,4 +20,7 @@ angular.module('tweetApp')
 
     $scope.loadNewTweet();
 
+    $scope.$on('newTweetCreated', function(event, newTweet) {
+      $scope.tweets.unshift(newTweet);
+    });
   }]);

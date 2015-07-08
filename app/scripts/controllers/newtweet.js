@@ -12,9 +12,7 @@ angular.module('tweetApp')
 
     $scope.createNewTweet = function(content) {
       var newTweet = new restApi.tweet({content: content});
-      newTweet.$save();
-      // TODO: Refresh timeline after create new tweet
-      return newTweet;
+      return newTweet.$save();
     };
 
     $scope.displayTweetBox = function() {
@@ -25,7 +23,10 @@ angular.module('tweetApp')
       });
 
       modalInstance.result.then(function(content) {
-        $scope.createNewTweet(content);
+        $scope.createNewTweet(content).then(function(newTweet) {
+          newTweet.User = $scope.currentUser;
+          $scope.$emit('newTweetCreated', newTweet);
+        });
       });
     };
 
